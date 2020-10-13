@@ -90,6 +90,7 @@ install:
   - travis_retry conda update --yes conda
   # Use the conda-forge channel
   - conda config --append channels conda-forge
+  - conda config --set channel_priority strict
   # For faster tests, only build conda packages for the master branch or pull requests
   - if [[ $TRAVIS_PULL_REQUEST == 'false' ]] && [[ $TRAVIS_BRANCH != 'master' ]]; then
        DO_CONDA_BUILD='no';
