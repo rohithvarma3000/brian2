@@ -61,9 +61,12 @@ if 'rate' in globals():
 __docformat__ = "restructuredtext en"
 
 from ._version import get_versions
-__version__ = get_versions()['version']
-__release_date__ = get_versions()['date'][:10]  # only date
+_version_info = get_versions()
+__version__ = _version_info['version']
+__commit__ = _version_info['full-revisionid']
+__release_date__ = _version_info['date'][:10]  # only date
 del get_versions
+del _version_info
 
 from brian2.only import *
 from brian2.only import test
