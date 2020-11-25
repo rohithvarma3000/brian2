@@ -1,6 +1,8 @@
+{% set data = load_setup_py_data() %}
+
 package:
   name: brian2
-  version: "2.4.2.dev0"
+  version: {{  data.get('version') }}
 
 build:
   number: 0
